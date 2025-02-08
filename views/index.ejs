@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<body>
+  <div class="login">
+   <h1>Phishing Site Detection</h1>
+ 
+      <!-- Main Input For Receiving Query to our ML -->
+     <form action="/check" method="post">
+       <input type="text" name="EnterYourSite" placeholder="Enter your Site" required="required" />
+       
+       
+       <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+     </form>
+ 
+    <br>
+    <br>
+    <% console.log(tt); %>
+    <% if (tt === "3") { %>
+      {{ prediction_text }}
+    <% } else if (tt===true) { %>
+     safe
+     <% } else if(tt==false) { %>
+      not safe
+ <% } %>
+  </div>
+ 
+ 
+ </body>
+  <%- include("partials/footer.ejs") %>
